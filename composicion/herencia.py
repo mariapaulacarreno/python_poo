@@ -58,17 +58,47 @@ class Alumno(Persona):
         print("\tMatrículas: ", self.__Asignaturas)
 
 class Profesor(Persona):
-    pass
+    def __init__(self):
+        self.__Departamento = ""
+        self.__Asignaturas = ""
 
+    def getDepartamento(self):
+        return self.__Departamento
+    
+    def setDepartamento(self, departamento):
+        self.__Departamento = departamento
+
+    def getAsignaturas(self):
+        return self.__Asignaturas
+    
+    def setAsignaturas(self, asignaturas):
+        self.__Asignaturas = asignaturas
+
+    def mostrarProfesor(self):
+        print("Profesor")
+        print("\tNombre: ", self.getNombre())
+        print("\tApellidos: ", self.getApellidos())
+        print("\tEdad: ", self.getEdad())
+        print("\tDepartamento: ", self.__Departamento)
+        print("\tMatrículas: ", self.__Asignaturas)
 # metodo principal
 def main():
+    # ALUMNO
     alumno = Alumno()
-    alumno.setNombre("Néstor")
-    alumno.setApellidos("Páez Sarmiento")
-    alumno.setEdad(25)
+    alumno.setNombre("Maria Paula")
+    alumno.setApellidos("Carreño Guevara")
+    alumno.setEdad(15)
     alumno.setCurso("Bachillerato")
     alumno.setAsignaturas(["Matemáticas", "Tecnología", "Inglés"])
     alumno.mostrarAlumno()
+    # PROFESOR
+    profesor = Profesor()
+    profesor.setNombre("Nestor")
+    profesor.setApellidos("Paez")
+    profesor.setEdad(30)
+    profesor.setDepartamento("Matemáticas")
+    profesor.setAsignaturas(["Álgebra", "Geometría"])
+    profesor.mostrarProfesor()
 
 if __name__ == "__main__":
     main()
